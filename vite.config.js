@@ -43,7 +43,7 @@ export default defineConfig({
   },
 
   build: {
-    outDir: "./docs",
+    // outDir: "./docs",
     minify: 'terser',
     terserOptions: {
       format: {
