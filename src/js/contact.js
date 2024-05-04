@@ -105,7 +105,7 @@ if (contactForm) {
     }
 
     else {
-      const receiveEmail = "fazaldinsons@gmail.com";
+      const receiveEmail = "carclubtire@gmail.com";
       // Compose email message
       const subject = `[Contact-Form] ${nameInput.value}`;
       const body = `${messageInput.value}\n\n${nameInput.value}\n${emailInput.value}`;
