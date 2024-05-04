@@ -2,12 +2,19 @@
 // const cssnano = require('cssnano');
 // const purgecss = require("@fullhuman/postcss-purgecss");
 const IN_PRODUCTION = process.env.NODE_ENV === "production";
+const bootstrap = "node_modules/bootstrap"
+
 
 module.exports = {
   plugins: [
     IN_PRODUCTION &&
       require("@fullhuman/postcss-purgecss")({
-        content: [`index.html`, `./src/**/*.js`],
+        content: [
+          `index.html`,
+          `./src/**/*.js`,
+          `${bootstrap}/js/dist/alert.js`,
+        ]
+        ,
         defaultExtractor(content) {
           const contentWithoutStyleBlocks = content.replace(
             /<style[^]+?<\/style>/gi,

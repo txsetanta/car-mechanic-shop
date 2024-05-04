@@ -45,50 +45,76 @@ setInterval(updateStatusRealtime, 15000);
 
 
 // JavaScript form submission
-const form = document.getElementById('homepage-contact-form');
-const nameInput = document.getElementById('contact-form-name');
-const emailInput = document.getElementById('contact-form-email');
-const messageInput = document.getElementById('contact-form-message');
-const validateEmail = (email) => {
-  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  return emailRegex.test(email);
-}
-const validateForm = () => {
-  if (nameInput.value.trim() === '') {
-    alert('Please enter your name.');
-    return false;
-  }
-  if (emailInput.value.trim() === '' || !validateEmail(emailInput.value)) {
-    alert('Please enter a valid email address.');
-    return false;
-  }
-  if (messageInput.value.trim() === '') {
-    alert('Please enter a message.');
-    return false;
-  }
-  return true;
-}
+import "bootstrap/js/dist/alert.js";
+const formId = 'homepage-contact-form';
+const contactForm = document.getElementById(formId);
+if (contactForm) {
 
-form.addEventListener("submit", function (event) {
-  // Prevent default form submission
-  if (!validateForm()) {
+  const nameInput = document.querySelector('#' + formId + ' #contact-form-name');
+  const emailInput = document.querySelector('#' + formId + ' #contact-form-email');
+  const messageInput = document.querySelector('#' + formId + ' #contact-form-message');
+  // const button = document.querySelector('#' + formId + ' #form-submit-button');
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
+  }
+
+  // Error Alerts
+  const alertPlaceholder = document.querySelector('#' + formId + ' #errorAlerts');
+  const appendAlert = (message, type) => {
+    alertPlaceholder.innerHTML = [
+      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `<div>${message}</div>`,
+      '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      '</div>'
+    ].join('')
+  }
+
+  const validateForm = () => {
+    if (nameInput.value.trim() === '') {
+      appendAlert('Please enter your name', 'danger');
+      return false;
+    }
+    if (emailInput.value.trim() === '' || !validateEmail(emailInput.value)) {
+      // alert('Please enter a valid email address.');
+      appendAlert('Please enter a valid email address.', 'danger');
+      return false;
+    }
+    if (messageInput.value.trim() === '') {
+      appendAlert('Please enter a message.', 'danger');
+      return false;
+    }
+    return true;
+  }
+
+  contactForm.addEventListener("submit", function (event) {
+    // Prevent default form submission
     event.preventDefault();
-  } else {
-    const nameInput = document.getElementById("contact-form-name");
-    const emailInput = document.getElementById("contact-form-email");
-    const messageInput = document.getElementById("contact-form-message");
-    const receiveEmail = "fazaldinsons@gmail.com";
-    const emailButton = document.querySelector("button.form-submit-button");
 
-    // Compose email message
-    const subject = `[Contact-Form] ${nameInput.value}`;
-    const body = `${messageInput.value}\n\n${nameInput.value}\n${emailInput.value}`;
+    // Remove previous alerts
+    const alertDismiss = this.querySelectorAll('#' + formId + ' #errorAlerts > *');
+    if (alertDismiss) {
+      alertDismiss.forEach(e => {
+        e.remove();
+      });
+    };
 
-    // Open default email app and fill in appropriate fields
-    const mailtoUrl = `mailto:${encodeURIComponent(
-      receiveEmail
-    )}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    // Open Email client on click
-    window.open(mailtoUrl);
-  }
-});
+    if (!validateForm()) {
+      return false;
+    }
+
+    else {
+      const receiveEmail = "fazaldinsons@gmail.com";
+      // Compose email message
+      const subject = `[Contact-Form] ${nameInput.value}`;
+      const body = `${messageInput.value}\n\n${nameInput.value}\n${emailInput.value}`;
+      // Open default email app and fill in appropriate fields
+      const mailtoUrl = `mailto:${encodeURIComponent(
+        receiveEmail
+      )}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      // Open Email client on click
+      window.open(mailtoUrl);
+    }
+  });
+}
