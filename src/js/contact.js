@@ -62,9 +62,9 @@ if (contactForm) {
 
   // Error Alerts
   const alertPlaceholder = document.querySelector('#' + formId + ' #errorAlerts');
-  const appendAlert = (message, type) => {
+  const appendAlert = message => {
     alertPlaceholder.innerHTML = [
-      `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+      `<div class="alert alert-danger alert-dismissible" role="alert">`,
       `<div>${message}</div>`,
       '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
       '</div>'
@@ -73,16 +73,16 @@ if (contactForm) {
 
   const validateForm = () => {
     if (nameInput.value.trim() === '') {
-      appendAlert('Please enter your name', 'danger');
+      appendAlert('Please enter your name');
       return false;
     }
     if (emailInput.value.trim() === '' || !validateEmail(emailInput.value)) {
       // alert('Please enter a valid email address.');
-      appendAlert('Please enter a valid email address.', 'danger');
+      appendAlert('Please enter a valid email address.');
       return false;
     }
     if (messageInput.value.trim() === '') {
-      appendAlert('Please enter a message.', 'danger');
+      appendAlert('Please enter a message.');
       return false;
     }
     return true;
