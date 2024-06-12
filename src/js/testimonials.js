@@ -1,6 +1,30 @@
 // Setup Alert Boxes
 const alertBoxesData = [
   {
+    url: `https://goo.gl/maps/zA9qfkUA6gyxb3Ff9`,
+    img: `./media/reviewers/xavier_marin.webp`,
+    name: `Xavier Marin`,
+    body: `I brought my 2009 Toyota Highlander here with 239,000 miles for a Diagnostic after taking it to 3 other mechanics even paying twice to replace sensors, because that’s why they said. . Car Club Tire found multiple things wrong and showed dedication and patience with my vehicle to ensure it was fixed. The guys are honest, friendly, and understanding. They exceeded the service on my vehicle. I left with my vehicle with a smile. I need some other work done soon on suspension and my wife’s truck. I’m bringing my family’s vehicles here from now on. I’m happy with Car Club Tires. Thank you so much!`,
+  },
+  {
+    url: `https://goo.gl/maps/gzSAfPAC8wQ1D2Rb9`,
+    img: false,
+    name: `Mubbaya Babar`,
+    body: `Excellent and professional service 7 days a week. They are truly a blessing to the neighborhood.  Any make or model it doesn't matter, and they took care of me. Now I have a Mercedes, and they still take good care of me. 100% dependable very Professional work they did. I highly recommend this to everyone for their vehicle need. They are the best in Orange city thanks….`,
+  },
+  {
+    url: `https://goo.gl/maps/XoiAT3zMgmoWBJBt7`,
+    img: false,
+    name: `Carlos Gonzalez`,
+    body: `Good Staff with honesty. They explainde me everything before they did everything on my vehículo Most of the places lying by saying I need this and etc they showed me what was exactly wrong and fixed it in no time. other place try to get more money from me but car club team showed the exact part that needed. I highly recomend this place to everyone. You cant find honest place now a days very Hard. Again thank you so much for helping me and saved my car. I Will definatly coming back for all of my service. 10/10`,
+  },
+  {
+    url: `https://goo.gl/maps/ria7TBqB4D7uDChx8`,
+    img: `./media/reviewers/usman_shah.webp`,
+    name: `Usman Shah`,
+    body: `I was driving down to Miami and my car broke down in the evening. Car repair shops near me were closing and offered to assist the next morning. I was lucky enough to call this shop. If I remember correctly, the owner was Farhan, and he had my car fixed in no time. It was a wonderful experience. The team is amazing. They also offered complimentary snacks, hands down the best service ever.`,
+  },
+  {
     url: `https://maps.app.goo.gl/yaGPXqhh7JXkPeQK8`,
     img: false,
     name: `Alejandro Nuve`,
@@ -59,12 +83,6 @@ const alertBoxesData = [
     img: false,
     name: `Shalandra Davis`,
     body: `I have a Toyota Prius, which is a hybrid vehicle. The battery was no good the owner of the shop and his brother fixed my vehicle in record timing. They were very fast very efficient and I highly recommend the services. I will always use them as my mechanics, the honesty and prices you can’t beat.`,
-  },
-  {
-    url: `https://maps.app.goo.gl/vp4xVF3Ykv3xeHpw5`,
-    img: false,
-    name: `Victory Karate`,
-    body: `I just recently bought a used vehicle and a day later turns out I need brakes. I found a Car Club Tire & auto on Groupon. I drove 51 minutes with no brakes just to get there. Thinking I just needed brake pads I was not financially prepared to afford much more than that. Turns out I need orders also. I'm a single mom and can't afford it. Everyone there was super helpful and did their best to help me and find an option for my situation and I left with all 4 new brake pads and 2 new front roders. I won't be going anywhere else from now on. Everyone was so nice and very professional and treated me very kindly. Thank you so much !!!`,
   },
   {
     url: `https://goo.gl/maps/qARRRYUnj4GqAedLA`,
