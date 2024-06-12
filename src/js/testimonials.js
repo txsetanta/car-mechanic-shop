@@ -90,36 +90,37 @@ const alertBoxesData = [
     name: `Maybelline Sierra`,
     body: `I needed 4 new tires, a wheel alignment and rear brake pads and rotors for my 2018 Honda Accord. I called at least 6 places for quotes and Car Club gave me the best deal by far. I called them back several times with new questions while I was still shopping around for price quotes and each time, they were super patien+t and kind with me. When I finally decided to go with them, they got me in for service the very next day and did a great job! Now we will be bringing them our second car as well for some needed routine maintenance. I highly recommend them!`,
   },
-];
+]
 
 const aletBoxHtml = alertBoxesData.map((rv) => {
   const avatar = rv.img
     ? `<img decoding="async" loading="lazy" width="26" height="26" src="${rv.img}" alt="Google Reviewer's Photo">`
-    : `<i class='bx bx-user p-1 border rounded-circle'></i>`;
-  const url = rv.url ? rv.url : ``;
-  const name = rv.name ? rv.name : ``;
-  const body = rv.body ? rv.body : ``;
+    : `<i class='bx bx-user p-1 border rounded-circle'></i>`
+  const url = rv.url ? rv.url : ``
+  const name = rv.name ? rv.name : ``
+  const body = rv.body ? rv.body : ``
 
-  const output = `<li class="glide__slide h-auto">
-      <figure class="h-100">
-        <figcaption class="text-center text-md-start mb-2 fw-medium">
-          <a href="${url}" title="5 star Google Review" target="_blank" rel="nofollow">
-            ${avatar} ${name} &#8212; <i class="bx bxl-google"></i> <i class="bx bx-map-alt"></i>
-          </a>
-        </figcaption>
-        <div class="star-ratings mb-2 text-center text-md-start">
-          <i class="bxs-star bx"></i>
-          <i class="bxs-star bx"></i>
-          <i class="bxs-star bx"></i>
-          <i class="bxs-star bx"></i>
-          <i class="bxs-star bx"></i>
-        </div>
-        <blockquote class="blockquote">"${body}"</blockquote>
-      </figure>
-    </li>`;
+  const output =
+  `<li class="glide__slide h-auto">`+
+      `<figure class="h-100">`+
+        `<figcaption class="text-center text-md-start mb-2 fw-medium">`+
+          `<a href="${url}" title="5 star Google Review" target="_blank" rel="nofollow">`+
+            `${avatar} ${name} &#8212; <i class="bx bxl-google"></i> <i class="bx bx-map-alt"></i>`+
+          `</a>`+
+        `</figcaption>`+
+        `<div class="star-ratings mb-2 text-center text-md-start">`+
+          `<i class="bxs-star bx"></i>`+
+          `<i class="bxs-star bx"></i>`+
+          `<i class="bxs-star bx"></i>`+
+          `<i class="bxs-star bx"></i>`+
+          `<i class="bxs-star bx"></i>`+
+        `</div>`+
+        `<blockquote class="blockquote">"${body}"</blockquote>`+
+      `</figure>`+
+    `</li>`
 
   return output;
 });
 
-const aletBoxesElement = document.getElementById(`review-slides`);
-if (aletBoxesElement) aletBoxesElement.innerHTML = aletBoxHtml.join(``);
+const aletBoxesElement = document.getElementById(`review-slides`)
+if (aletBoxesElement) aletBoxesElement.innerHTML = aletBoxHtml.join(``)

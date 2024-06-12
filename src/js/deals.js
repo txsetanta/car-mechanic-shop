@@ -11,13 +11,11 @@ const alertBoxesData = [
   },
 ];
 const alertBoxHtml = alertBoxesData.map((bx) => {
-  const body = bx.body ? bx.body : ``;
-  const output =
-    `<li>${body}</li>`;
-  return output;
+  const body = bx.body ? bx.body : ``
+  return `<li>${body}</li>`
 });
-const alertBoxesElement = document.querySelector("#alert-boxes .card-body");
-if (alertBoxesElement) alertBoxesElement.innerHTML = alertBoxHtml.join("");
+const alertBoxesElement = document.querySelector("#alert-boxes .card-body")
+if (alertBoxesElement) alertBoxesElement.innerHTML = alertBoxHtml.join("")
 
 
 
@@ -79,16 +77,18 @@ const dealsSlidesData = [
   },
 ];
 const dealsSlidesHtml = dealsSlidesData.map((sl) => {
-  return `<li class="glide__slide h-auto">
-      <div class="ag-courses_item h-100 bg-primary p-3 text-light rounded">
-        <div class="ag-courses-item_bg"></div>
-        <div class="ag-courses-item_title fs-5 fw-medium mb-2">
-          <div>${sl.icon}</div>
-          <div>${sl.title}</div>
-        </div>
-        <div class="ag-course-body"> ${sl.body}</div>
-      </div>
-    </li>`;
+  const output =
+    `<li class="glide__slide h-auto">`+
+      `<div class="ag-courses_item h-100 bg-primary p-3 text-light rounded">`+
+        `<div class="ag-courses-item_bg"></div>`+
+        `<div class="ag-courses-item_title fs-5 fw-medium mb-2">`+
+          `<div>${sl.icon}</div>`+
+          `<div>${sl.title}</div>`+
+        `</div>`+
+        `<div class="ag-course-body">${sl.body}</div>`+
+      `</div>`+
+    `</li>`
+  return output
 });
-const dealsSlidesElement = document.getElementById("deals-slides");
-if (dealsSlidesElement) dealsSlidesElement.innerHTML = dealsSlidesHtml.join("");
+const dealsSlidesElement = document.getElementById("deals-slides")
+if (dealsSlidesElement) dealsSlidesElement.innerHTML = dealsSlidesHtml.join("")
