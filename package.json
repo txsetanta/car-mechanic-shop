@@ -18,14 +18,15 @@
     "autoprefixer": "^10.4.19",
     "bootstrap": "^5.3.3",
     "cssnano": "^6.1.2",
-    "postcss": "^8.4.38",
-    "sass": "^1.77.5",
-    "vite": "^5.2.13",
+    "postcss": "^8.4.39",
+    "sass": "^1.77.6",
+    "vite": "^5.3.3",
     "vite-plugin-minify": "^1.5.2",
     "vite-plugin-webfont-dl": "^3.9.4"
   },
   "dependencies": {
-    "@glidejs/glide": "^3.6.1",
-    "boxicons": "^2.1.4"
+    "@glidejs/glide": "^3.6.2",
+    "boxicons": "^2.1.4",
+    "caniuse-lite": "^1.0.30001640"
   }
 }
