@@ -24,15 +24,27 @@ function storeStatus() {
     timeZone,
     weekday: "long",
   });
-  const isOpeningHours =
+
+  let outputTime;
+  // Check if it's during opening hours
+  if (
     (dayOfWeek === "Sunday" && hours >= 9 && hours < 17) ||
-    (dayOfWeek !== "Sunday" && hours >= 8 && hours < 19);
+    (dayOfWeek !== "Sunday" && hours >= 8 && hours < 19)
+  ) outputTime = '<span class="open text-success fw-bold">Open</span> come on down'
+  // Check if it's after closing hours but before midnight
+  else if (
+    (dayOfWeek === "Sunday" && hours >= 17 && hours < 24) ||
+    (dayOfWeek !== "Sunday" && hours >= 19 && hours < 24)
+  ) outputTime = '<span class="closed text-danger fw-bold">Closed</span> at the moment see you tomorrow. &#128578;';
+  // Check if it's before opening hours but after midnight
+  else if (hours >= 0 && (dayOfWeek === "Sunday" ? hours < 8 : hours < 9)) {
+    if (dayOfWeek === "Sunday" && hours < 8)
+      outputTime = '<span class="closed text-danger fw-bold">Closed</span> at the moment see you at 08:00 AM. &#128564;';
+    else if (dayOfWeek !== "Sunday" && hours < 9)
+      outputTime = '<span class="closed text-danger fw-bold">Closed</span> at the moment see you at 09:00 AM. &#128564;';
+  }
 
-  const outputTime = isOpeningHours
-    ? '<span class="open text-success fw-bold">Open</span> come on down'
-    : '<span class="closed text-danger fw-bold">Closed</span> see you tomorrow. 🙂';
-
-  return `${outputDay}, We are ${outputTime}`;
+  return `It is ${outputDay}, We are ${outputTime}`;
 }
 
 function updateStatusRealtime() {
