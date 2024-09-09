@@ -32,13 +32,13 @@ const dealsSlidesData = [
   },
   {
     icon: `<i class="icon bx bxs-car-wash display-6"></i>`,
-    title: `Synthetic Oil Change for just $89.99`,
-    body: `Get your car running smoothly with our oil change specials! Synthetic oil change for $89.99. Quality service at great prices!`,
+    title: `Synthetic Oil Change for just $49.99`,
+    body: `Get your car running smoothly with our oil change specials! Synthetic oil change for $49.99. Quality service at great prices!`,
   },
   {
     icon: `<i class="icon bx bxs-car-wash display-6"></i>`,
-    title: `Conventional Oil Change for just $69.99`,
-    body: `Get your car running smoothly with our oil change specials! Conventional oil change for $69.99. Quality service at great prices!`,
+    title: `Conventional Oil Change for just $18.99`,
+    body: `Get your car running smoothly with our oil change specials! Conventional oil change for $18.99. Quality service at great prices!`,
   },
   {
     icon: `<i class="icon bx bx-stop-circle display-6"></i>`,
